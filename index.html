@@ -35,9 +35,9 @@
 
         <main class="my-4">
             <ul class="list-group mb-5 m-3">
-                <li class="list-group-item d-flex justify-content-between m-1 pointer" v-for="(item,index) in toSeeNew"
+                <li class="list-group-item  d-flex justify-content-between m-1 pointer" v-for="(item,index) in toSeeNew"
                     :key="item.id" @click="ToggleToSee(item.id)">
-                    <span :class="{'text-decoration-line-through' : item.done}"
+                    <span :class="{'text-dec ' : item.done}"
                         >{{item.city}}</span>
                     <i class="fa-regular fa-circle-xmark pointer" @click="deleteItem(item.id)"></i>
                 </li>
