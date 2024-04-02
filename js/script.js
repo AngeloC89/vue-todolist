@@ -12,6 +12,7 @@ createApp({
   data() {
     return {
       toSee,
+      nCity: '',
 
     }
   },
@@ -30,6 +31,28 @@ createApp({
       let i = this.toSee.findIndex((el)=> el.id === id);
       this.toSee.splice(i,1);
       //console.log(i)
+
+    },
+    //heere create a new object and push inside the new element
+    addItem(){
+      const newObj = {
+        id:'null',
+        city: this.nCity,
+        done: false
+      }
+      let nextId = 0;
+      this.toSee.forEach((el) => {
+        if(nextId < el.id){
+          nextId = el.id
+        }      
+      });
+      newObj.id = nextId + 1;
+      this.toSee.push(newObj)
+      console.log(this.nCity)
+      console.log(this.toSee)
+
+
+
 
     }
 

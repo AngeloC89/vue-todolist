@@ -26,9 +26,9 @@
                 <h1>Posti Da Vedere</h1>
             </div>
         </header>
-        <!-- Main ***** parte centrale **** Lista  -->
+        <!-- Main **** List -->
         <main class="my-4">
-            <ul class="list-group">
+            <ul class="list-group mb-5">
                 <li class="list-group-item d-flex justify-content-between " v-for="(item,index) in toSee"
                      :key="item.id">
                     <span :class="{'text-decoration-line-through' : item.done}" @click="ToggleToSee(item.id)" >{{item.city}}</span>
@@ -36,7 +36,12 @@
                 </li>
                 
             </ul>
-
+            <!-- Form for add elements -->
+            <div class="my-3 p-3">
+                <label for="add" class="form-label">Aggiungi Elemento</label>
+                <input type="text" class="form-control" id="add" v-model="nCity">
+                <button class="btn btn-outline-warning my-2 " @click="addItem">Aggiungi</button>
+              </div>
         </main>
         </div>
 
