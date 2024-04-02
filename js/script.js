@@ -35,6 +35,9 @@ createApp({
     },
     //heere create a new object and push inside the new element
     addItem(){
+      if (this.nCity.trim() === '') {
+        return; 
+      }
       const newObj = {
         id:'null',
         city: this.nCity,
@@ -47,6 +50,7 @@ createApp({
         };      
       });
       newObj.id = nextId + 1;
+
       this.toSee.push(newObj);
       this.nCity = '';
       console.log(this.nCity);
