@@ -19,7 +19,20 @@
 <body>
 
     <div id="app">
-      
+        <header>
+            <div class="text-center my-3">
+                <h1>Posti Da Vedere</h1>
+            </div>
+        </header>
+        <!-- Main ***** parte centrale **** Lista  -->
+        <main class="my-4">
+            <ul class="list-group">
+                <li class="list-group-item" v-for="(item,index) in toSee" >{{item.city}}</li>
+                
+              </ul>
+
+        </main>
+
 
     </div>
 
