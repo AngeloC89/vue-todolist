@@ -1,5 +1,4 @@
-/*
-*/
+
 
 import { toSee } from './data.js';
 
@@ -13,6 +12,7 @@ createApp({
     return {
       toSee,
       nCity: '',
+      done:'',
 
     }
   },
@@ -51,14 +51,23 @@ createApp({
       this.nCity = '';
       console.log(this.nCity);
       console.log(this.toSee);
+    },
 
-
-
-
+  },
+  computed: {
+    toSeeNew(){
+      return this.toSee.filter((el)=>{
+       if(this.done === ''){
+        return true;
+       };
+       if(this.done === 'true'){
+       return el.done === true;
+       };
+       if(this.done === 'false'){
+       return el.done === false;
+       };
+      })
     }
-
-
-
   },
   mounted() {
 

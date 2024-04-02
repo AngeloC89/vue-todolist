@@ -22,28 +22,35 @@
 
     <div id="app">
         <header>
-            <div class="text-center my-3">
+            <div class="text-center m-3 d-flex flex-column  justify-content-center align-items-center ">
                 <h1>Posti Da Vedere</h1>
+                <select class="form-select w-25" aria-label="Default select example" id="done" v-model="done" name="done">
+                    <option value="">Tutti</option>
+                    <option value="true">Visti</option>
+                    <option value="false">Da vedere</option>
+                  </select>
             </div>
         </header>
         <!-- Main **** List -->
+
         <main class="my-4">
-            <ul class="list-group mb-5">
-                <li class="list-group-item d-flex justify-content-between " v-for="(item,index) in toSee"
-                     :key="item.id">
-                    <span :class="{'text-decoration-line-through' : item.done}" @click="ToggleToSee(item.id)" >{{item.city}}</span>
+            <ul class="list-group mb-5 m-3">
+                <li class="list-group-item d-flex justify-content-between m-1 pointer" v-for="(item,index) in toSeeNew"
+                    :key="item.id" @click="ToggleToSee(item.id)">
+                    <span :class="{'text-decoration-line-through' : item.done}"
+                        >{{item.city}}</span>
                     <i class="fa-regular fa-circle-xmark pointer" @click="deleteItem(item.id)"></i>
                 </li>
-                
+
             </ul>
             <!-- Form for add elements -->
             <div class="my-3 p-3">
                 <label for="add" class="form-label">Aggiungi Elemento</label>
                 <input type="text" class="form-control" id="add" v-model="nCity" @keyup.enter="addItem">
-                <button class="btn btn-outline-warning my-2 " @click="addItem" >Aggiungi</button>
-              </div>
+                <button class="btn btn-secondary  my-2 " @click="addItem">Aggiungi</button>
+            </div>
         </main>
-        </div>
+    </div>
 
 </body>
 

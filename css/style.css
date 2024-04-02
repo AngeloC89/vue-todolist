@@ -5,6 +5,10 @@
 }
 body{
     font-family: "Roboto", sans-serif;
+    background-image: url(../img/oceano\ mare.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    opacity: 0.8;
 }
 
 .pointer{
