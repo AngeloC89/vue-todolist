@@ -39,17 +39,18 @@ createApp({
         id:'null',
         city: this.nCity,
         done: false
-      }
+      };
       let nextId = 0;
       this.toSee.forEach((el) => {
         if(nextId < el.id){
           nextId = el.id
-        }      
+        };      
       });
       newObj.id = nextId + 1;
-      this.toSee.push(newObj)
-      console.log(this.nCity)
-      console.log(this.toSee)
+      this.toSee.push(newObj);
+      this.nCity = '';
+      console.log(this.nCity);
+      console.log(this.toSee);
 
 
 

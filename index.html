@@ -39,8 +39,8 @@
             <!-- Form for add elements -->
             <div class="my-3 p-3">
                 <label for="add" class="form-label">Aggiungi Elemento</label>
-                <input type="text" class="form-control" id="add" v-model="nCity">
-                <button class="btn btn-outline-warning my-2 " @click="addItem">Aggiungi</button>
+                <input type="text" class="form-control" id="add" v-model="nCity" @keyup.enter="addItem">
+                <button class="btn btn-outline-warning my-2 " @click="addItem" >Aggiungi</button>
               </div>
         </main>
         </div>
