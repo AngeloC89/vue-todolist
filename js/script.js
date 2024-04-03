@@ -12,7 +12,7 @@ createApp({
     return {
       toSee,
       nCity: '',
-      done:'',
+      done: '',
 
     }
   },
@@ -27,27 +27,27 @@ createApp({
       console.log(item);
     },
     //a function for remove items on list
-    deleteItem(id){
-      let i = this.toSee.findIndex((el)=> el.id === id);
-      this.toSee.splice(i,1);
+    deleteItem(id) {
+      let i = this.toSee.findIndex((el) => el.id === id);
+      this.toSee.splice(i, 1);
       //console.log(i)
 
     },
     //heere create a new object and push inside the new element
-    addItem(){
+    addItem() {
       if (this.nCity.trim() === '') {
-        return; 
+        return;
       }
       const newObj = {
-        id:'null',
+        id: 'null',
         city: this.nCity,
         done: false
       };
       let nextId = 0;
       this.toSee.forEach((el) => {
-        if(nextId < el.id){
+        if (nextId < el.id) {
           nextId = el.id
-        };      
+        };
       });
       newObj.id = nextId + 1;
 
@@ -59,17 +59,17 @@ createApp({
 
   },
   computed: {
-    toSeeNew(){
-      return this.toSee.filter((el)=>{
-       if(this.done === ''){
-        return true;
-       };
-       if(this.done === 'true'){
-       return el.done === true;
-       };
-       if(this.done === 'false'){
-       return el.done === false;
-       };
+    toSeeNew() {
+      return this.toSee.filter((el) => {
+        if (this.done === '') {
+          return true;
+        };
+        if (this.done === 'true') {
+          return el.done === true;
+        };
+        if (this.done === 'false') {
+          return el.done === false;
+        };
       })
     }
   },

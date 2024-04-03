@@ -24,24 +24,23 @@
         <header>
             <div class="text-center m-3 d-flex flex-column  justify-content-center align-items-center ">
                 <h1>Posti Da Vedere</h1>
-                <select class="form-select w-25" aria-label="Default select example" id="done" v-model="done" name="done">
+                <select class="form-select w-25" aria-label="Default select example" id="done" v-model="done"
+                    name="done">
                     <option value="">Tutti</option>
                     <option value="true">Visti</option>
                     <option value="false">Da vedere</option>
-                  </select>
+                </select>
             </div>
         </header>
         <!-- Main **** List -->
-
         <main class="my-4">
             <ul class="list-group mb-5 m-3">
                 <li class="list-group-item  d-flex justify-content-between m-1 pointer" v-for="(item,index) in toSeeNew"
                     :key="item.id" @click="ToggleToSee(item.id)">
-                    <span :class="{'text-dec ' : item.done}"
-                        >{{item.city}}</span>
-                    <i class="fa-regular fa-circle-xmark pointer" @click="deleteItem(item.id)"></i>
-                </li>
-
+                    <span :class="{'text-dec ' : item.done}">{{item.city}}</span>
+                    <div class="d-flex justify-content-center align-items-center ">
+                        <i class="fa-regular fa-circle-xmark pointer" @click="deleteItem(item.id)"></i>
+                    </div>
             </ul>
             <!-- Form for add elements -->
             <div class="my-3 p-3">
@@ -51,7 +50,5 @@
             </div>
         </main>
     </div>
-
 </body>
-
 </html>
